@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador dos Playoffs - CS Major Hub</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="site-logo">CS Major <strong>HUB</strong></a>
+            <nav class="main-nav">
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bracket.html">Tabela</a></li>
+                    <li><a href="simulator.html" class="active">Simulador</a></li>
+                    <li><a href="news.html">Notícias</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="simulator-page page-container container">
+        <div class="simulator-header">
+            <h1 class="page-title" style="background: linear-gradient(to right, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Simulador de Playoffs</h1>
+            <p class="page-subtitle">Clique nos times para avançá-los e coroar o seu campeão!</p>
+            <div class="controls">
+                <button id="resetBtn" class="btn btn-secondary"><i class="fas fa-redo"></i> Resetar Simulação</button>
+            </div>
+        </div>
+
+        <!-- ESTRUTURA PRINCIPAL DO NOVO SIMULADOR -->
+        <div class="simulator-bracket" id="simulator-bracket">
+            <!-- Coluna 1: Quartas de Final -->
+            <div class="stage-card">
+                <h3 class="stage-title">Quartas de Final</h3>
+                <div class="team-list" id="qf-list">
+                    <!-- JS vai preencher aqui -->
+                </div>
+            </div>
+            <!-- Coluna 2: Semifinais -->
+            <div class="stage-card">
+                <h3 class="stage-title">Semifinais</h3>
+                <div class="team-list" id="sf-list">
+                    <!-- JS vai preencher aqui -->
+                </div>
+            </div>
+            <!-- Coluna 3: Grande Final -->
+            <div class="stage-card">
+                <h3 class="stage-title">Grande Final</h3>
+                <div class="team-list" id="final-list">
+                    <!-- JS vai preencher aqui -->
+                </div>
+            </div>
+            <!-- Coluna 4: Campeão -->
+            <div class="stage-card">
+                <h3 class="stage-title">Campeão</h3>
+                <div class="team-list champion-area" id="champion-area">
+                    <!-- JS vai preencher aqui -->
+                </div>
+            </div>
+        </div>
+        <!-- FIM DA ESTRUTURA -->
+
+    </main>
+
+    <!-- Card do Campeão (Overlay) - Mantido -->
+    <div id="championCard" class="champion-overlay hidden">
+        <div class="champion-content">
+            <button class="close-btn" aria-label="Fechar">×</button>
+            <img class="champion-logo" src="" alt="Logo do Campeão">
+            <h3 class="champion-name"></h3>
+            <div class="champion-title"><i class="fas fa-trophy"></i> CAMPEÃO!</div>
+        </div>
+    </div>
+
+    <footer class="site-footer-bottom">
+        <div class="container">
+            <p>© 2025 CS Major Hub. Criado como projeto de Engenharia de Software.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="assets/js/majorData.js"></script>
+    <script src="assets/js/simulator.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* admin/admin.css */
+
+/* Estilos para o Painel de Controle */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--color-background);
+}
+.login-container {
+    background-color: var(--color-surface);
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.login-container h1 { font-family: var(--font-heading); }
+.login-container h2 { color: var(--color-text-secondary); margin-bottom: 2rem; }
+.form-group { text-align: left; margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; color: var(--color-text-secondary); }
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+}
+.login-container .btn { width: 100%; }
+.error-message { color: #ff4d4d; min-height: 1.2em; }
+
+/* Admin Geral */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem 4rem 2rem;
+}
+.dashboard-controls {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+}
+.dashboard-controls h2 { margin-top: 0; margin-bottom: 1rem; }
+
+/* Estilo para a lista de gerenciamento de partidas */
+.stage-management {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+.stage-management h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.admin-match-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    background: var(--color-background);
+    transition: background-color 0.2s ease-in-out;
+    flex-wrap: wrap; /* Para responsividade */
+}
+.admin-match-row:hover {
+    background: #1e2537;
+}
+
+.match-team-control, .match-score-control, .match-meta-control {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.match-team-control { flex: 3 1 280px; } /* Flex-grow, shrink, basis */
+.match-score-control { flex: 1 1 120px; justify-content: center; }
+.match-meta-control { flex: 2 1 220px; }
+
+.admin-match-row .team-logo { width: 24px; height: 24px; object-fit: contain; flex-shrink: 0; }
+.admin-match-row select, .admin-match-row input {
+    padding: 0.6rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: var(--color-text-primary);
+    font-size: 0.9em;
+    width: 100%;
+}
+.admin-match-row .team-select { min-width: 150px; }
+.admin-match-row input[type="number"] { width: 50px; text-align: center; flex-shrink: 0; }
+.admin-match-row input[type="text"] { min-width: 100px; }
+.admin-match-row .btn-save-match {
+    padding: 0.6rem 1.2rem;
+    margin-left: auto; /* Alinha o botão à direita */
+    flex-shrink: 0;
+}
+
+/* Mensagem de notificação */
+.admin-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInSlide 0.5s forwards;
+}
+.admin-message.success { background-color: #00a86b; }
+.admin-message.error { background-color: #e5007d; }
+
+@keyframes fadeInSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

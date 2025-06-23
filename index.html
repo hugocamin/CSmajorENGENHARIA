@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Major Hub - O seu portal de Counter-Strike</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="site-logo">CS Major <strong>HUB</strong></a>
+            <nav class="main-nav">
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="bracket.html">Tabela</a></li>
+                    <li><a href="simulator.html">Simulador</a></li>
+                    <li><a href="news.html">Notícias</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-carousel">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide-tabela" style="background-image: url('https://major.starladder.com/481019dc03956d06ffa5bcec7df9dca6.png');">
+                        <a href="bracket.html" class="slide-link">
+                            <div class="slide-content">
+                                <h1>TABELA DO MAJOR 2025</h1>
+                                <p>Acompanhe a jornada completa de cada time até a glória.</p>
+                                <span class="btn btn-primary">Ver Tabela Completa <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                       <div class="swiper-slide slide-tabela" style="background-image: url('https://major.starladder.com/481019dc03956d06ffa5bcec7df9dca6.png');">
+                        <a href="simulator.html" class="slide-link">
+                             <div class="slide-content">
+                                <h1>SIMULADOR DE PLAYOFFS</h1>
+                                <p>Crie sua própria realidade. Quem levantará o troféu na sua versão?</p>
+                                <span class="btn btn-primary">Criar Simulação <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <section class="latest-news-section">
+            <div class="container">
+                <h2 class="section-title">Últimas Notícias</h2>
+                <div class="news-grid">
+             <a href="news-article.html" class="news-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRegIrkuVcegdGKAeBoC-pwtz_qkt5EAJ3bQw&s" alt="Jogador da Vitality comemorando">
+                    <div class="news-card-content">
+                        <h3>Team Vitality continua imensa série de vitórias com vitória no BLAST Austin Major</h3>
+                        <p>A equipe levanta outro troféu depois de superar o MongolZ.</p>
+                        <span>Leia mais <i class="fas fa-chevron-right"></i></span>
+                    </div>
+                </a>
+                    <a href="news-article2.html" class="news-card">
+                        <img src="https://img-cdn.hltv.org/gallerypicture/4541EPbP12L0WCWptEWF1G.jpg?ixlib=java-2.1.0&w=1200&s=a361414c5ddafcc5f5250f7562409f0e" alt="Cs major 2025">
+                        <div class="news-card-content">
+                            <h3>Torneio teve quase 700 espectadores simultâneos a mais</h3>
+                            <p>A América do Norte sediou dois dos maiores campeonatos de esports ao mesmo tempo...</p>
+                            <span>Leia mais <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </a>
+                     <a href="news-article3.html" class="news-card">
+                        <img src="https://noticias.maisesports.com.br/wp-content/uploads/2025/06/pain-eliminada-major-austin-2025.jpg" alt="FURIA eliminada">
+                        <div class="news-card-content">
+                            <h3>BLAST.tv Austin Major 2025: paiN é eliminada na semifinal do Major</h3>
+                            <p>A equipe brasileira não conseguiu avançar, mas saiu de cabeça erguida, agradecendo o apoio da torcida...</p>
+                            <span>Leia mais <i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+                 <div class="see-more-container">
+                    <a href="news.html" class="btn btn-secondary">Ver todas as notícias</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container">
+            <p>© 2025 CS Major Hub. Criado como projeto de Engenharia de Software.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

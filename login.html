@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Painel de Controle</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="admin/admin.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <h1>CS Major <strong>HUB</strong></h1>
+        <h2>Painel de Controle</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" required>
+            </div>
+            <p id="error-message" class="error-message"></p>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            // Senha fixa para a demonstração
+            if (password === 'admin123') {
+                // "Logado" com sucesso
+                sessionStorage.setItem('isAdminAuthenticated', 'true');
+                window.location.href = 'admin/dashboard.html';
+            } else {
+                errorMessage.textContent = 'Senha incorreta.';
+            }
+        });
+    </script>
+</body>
+</html>

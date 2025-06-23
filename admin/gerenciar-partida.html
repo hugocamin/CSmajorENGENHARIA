@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Partida - Controle</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header class="admin-header">
+        <h1>Lançar Resultado da Partida</h1>
+        <a href="dashboard.html"><i class="fas fa-arrow-left"></i> Voltar para o Dashboard</a>
+    </header>
+    <main class="admin-container">
+        <form id="manage-match-form" class="manage-form">
+            <h2 id="match-title"></h2>
+            <div class="form-group">
+                <label id="team1-label" for="score1">Placar Time 1</label>
+                <input type="number" id="score1" min="0" max="3" required>
+            </div>
+            <div class="form-group">
+                <label id="team2-label" for="score2">Placar Time 2</label>
+                <input type="number" id="score2" min="0" max="3" required>
+            </div>
+             <div class="form-group">
+                <label for="status">Status da Partida</label>
+                <select id="status">
+                    <option value="A Seguir">A Seguir</option>
+                    <option value="Ao Vivo">Ao Vivo</option>
+                    <option value="Concluído">Concluído</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar Resultado</button>
+        </form>
+    </main>
+    
+    <script src="../assets/js/majorData.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

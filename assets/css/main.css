@@ -1,0 +1,757 @@
+:root {
+    --color-primary: #00a8ff;
+    --color-secondary: #e5007d;
+    --color-background: #0d1117;
+    --color-surface: #161b22;
+    --color-border: #30363d;
+    --color-text-primary: #f0f6fc;
+    --color-text-secondary: #8b949e;
+    --color-winner: #ffd700;
+    
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* --- RESET GERAL E BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+}
+.container { width: 90%; max-width: 1400px; margin: 0 auto; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--color-primary); text-decoration: none; }
+
+/* --- HEADER E NAVEGAÇÃO --- */
+.site-header {
+    background-color: rgba(22, 27, 34, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+    position: sticky; top: 0; z-index: 1000;
+}
+.site-header .container { display: flex; justify-content: space-between; align-items: center; }
+.site-logo { font-family: var(--font-heading); font-size: 1.5rem; color: var(--color-text-primary); }
+.site-logo strong { color: var(--color-primary); }
+.main-nav ul { list-style: none; display: flex; gap: 1.5rem; }
+.main-nav a {
+    color: var(--color-text-secondary);
+    font-weight: 700; padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+.main-nav a:hover { color: var(--color-text-primary); }
+.main-nav a.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+.mobile-menu-btn { display: none; background: none; border: none; color: var(--color-text-primary); font-size: 1.5rem; cursor: pointer; }
+
+/* --- BOTÕES E TÍTULOS GERAIS --- */
+.btn {
+    font-family: var(--font-heading); padding: 0.8rem 1.8rem;
+    border-radius: 5px; cursor: pointer; transition: all 0.3s ease;
+    font-size: 1rem; text-transform: uppercase; display: inline-block;
+}
+.btn-primary { background: var(--color-primary); color: #fff; border: 2px solid var(--color-primary); }
+.btn-primary:hover { background: transparent; color: var(--color-primary); }
+.btn-secondary { background: transparent; color: var(--color-text-secondary); border: 2px solid var(--color-border); }
+.btn-secondary:hover { color: var(--color-text-primary); border-color: var(--color-text-secondary); }
+.section-title, .page-title { font-family: var(--font-heading); text-align: center; margin-bottom: 1rem; font-size: 2.5rem; }
+.page-subtitle { text-align: center; color: var(--color-text-secondary); font-size: 1.2rem; margin-top: -1rem; margin-bottom: 3rem; }
+
+/* --- PÁGINA INICIAL (HOME) E NOTÍCIAS --- */
+.latest-news-section { padding: 4rem 0; }
+.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.news-card {
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-radius: 8px; overflow: hidden; display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.news-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+.news-card img { width: 100%; height: 200px; object-fit: cover; }
+.news-card-content { padding: 1.5rem; }
+.news-card-content h3 { font-family: var(--font-heading); margin-bottom: 0.5rem; }
+.news-card-content p { color: var(--color-text-secondary); margin-bottom: 1rem; }
+.news-card-content span { font-weight: bold; }
+.see-more-container { text-align: center; margin-top: 3rem; }
+
+/* --- PÁGINA DA TABELA ESTÁTICA (ANTIGA) --- */
+.page-container { padding: 3rem 0; }
+.static-bracket { display: flex; flex-direction: column; gap: 2rem; align-items: center; }
+.static-bracket .stage { margin-top: 0; gap: 1rem; max-width: 400px; width: 100%; }
+
+/* --- PÁGINA DE ARTIGOS --- */
+.news-grid.full-page { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.article-container { max-width: 800px; }
+.news-article-full h1 { font-size: 3rem; text-align: left; }
+.article-meta { color: var(--color-text-secondary); margin-bottom: 2rem; }
+.article-banner { width: 100%; border-radius: 8px; margin-bottom: 2rem; }
+.article-content p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+.article-content blockquote { padding: 1.5rem; margin: 2rem 0; border-left: 4px solid var(--color-primary); background: var(--color-surface); font-style: italic; }
+
+/* --- FOOTER --- */
+.site-footer-bottom { text-align: center; padding: 2rem; margin-top: 2rem; background: var(--color-surface); color: var(--color-text-secondary); }
+
+/* --- ESTILOS DO CARROSSEL HERO --- */
+.hero-carousel {
+    width: 100%;
+    height: 60vh;
+    min-height: 450px;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+}
+.swiper-slide .slide-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 17, 23, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+.slide-tabela { background-image: url('https://i.imgur.com/gK6n0gG.jpg'); }
+.slide-simulador { background-image: url('https://i.imgur.com/J1y8nZW.jpg'); }
+.slide-content h1 { font-family: var(--font-heading); font-size: 3.5rem; text-shadow: 0 0 15px rgba(0,0,0,0.5); }
+.slide-content p { font-size: 1.2rem; max-width: 600px; margin: 1rem auto 2rem auto; color: var(--color-text-secondary); }
+
+/* Customização dos botões do Swiper */
+.swiper-button-next, .swiper-button-prev { color: var(--color-primary); }
+.swiper-pagination-bullet-active { background: var(--color-primary); }
+
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .main-nav ul {
+        display: none; position: absolute;
+        top: 100%; left: 0; width: 100%;
+        background: var(--color-surface);
+        flex-direction: column; text-align: center;
+    }
+    .main-nav ul.active { display: flex; }
+    .main-nav li { width: 100%; }
+    .main-nav a { display: block; padding: 1rem; border-bottom: 1px solid var(--color-border); }
+    .mobile-menu-btn { display: block; }
+
+    .slide-content h1 { font-size: 2.5rem; }
+    .section-title, .page-title { font-size: 2rem; }
+}
+
+/* Modal “Seu Palpite” */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal.hidden { display: none; }
+.modal-content {
+  background: var(--color-surface);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 90%;
+  width: 320px;
+  position: relative;
+}
+.close-share {
+  position: absolute;
+  top: 0.5rem; right: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+}
+
+/* ================================================================== */
+/* MELHORIAS ADICIONAIS PARA SIMULADOR E TABELA
+/* ================================================================== */
+
+/* --- Melhorias para o Simulador --- */
+.simulator-page .team.clickable {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.simulator-page .team.clickable:hover {
+    background-color: rgba(0, 168, 255, 0.1);
+    transform: translateX(2px);
+}
+
+.simulator-page .team.winner {
+    background-color: rgba(255, 215, 0, 0.15);
+    border-left: 3px solid var(--color-winner);
+}
+
+.simulator-page .team.winner .team-name,
+.simulator-page .team.winner .team-score {
+    color: var(--color-winner);
+    font-weight: bold;
+}
+
+/* --- Informações das Partidas --- */
+.match-info {
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    border-top: 1px solid var(--color-border);
+    margin-top: 0.5rem;
+}
+
+/* --- Animações e Transições --- */
+.match {
+    transition: all 0.3s ease;
+}
+
+.simulator-page .match:not(.pending):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 168, 255, 0.15);
+}
+
+/* --- Estados de Loading --- */
+.match.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.match.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-border);
+    border-top: 2px solid var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* --- Melhorias para o Display do Campeão --- */
+.champion-display {
+    padding: 2rem;
+    border: 2px dashed var(--color-border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.champion-display.has-winner {
+    border-color: var(--color-winner);
+    background-color: rgba(255, 215, 0, 0.05);
+}
+
+.champion-display .fa-trophy.winner {
+    color: var(--color-winner);
+    animation: trophy-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes trophy-glow {
+    0% { 
+        color: var(--color-winner);
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+    100% { 
+        color: #ffed4e;
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+}
+
+/* --- Modal do Campeão Melhorado --- */
+.champion-overlay {
+    backdrop-filter: blur(10px);
+}
+
+.champion-content {
+    animation: championAppear 0.5s ease-out;
+    border: 2px solid var(--color-winner);
+}
+
+@keyframes championAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-10deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* --- Controles do Simulador --- */
+.simulator-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.simulator-header h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.simulator-header p {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* --- Responsividade Aprimorada --- */
+@media (max-width: 768px) {
+    .simulator-header h1 {
+        font-size: 2rem;
+    }
+    
+    .match {
+        width: 260px;
+    }
+    
+    .team-logo {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .champion-content {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tournament-bracket,
+    .playoffs-wrapper {
+        padding: 1rem 0.5rem;
+    }
+    
+    .match {
+        width: 240px;
+    }
+    
+    .stage-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- Efeitos Visuais Adicionais --- */
+.team-logo {
+    transition: transform 0.2s ease;
+}
+
+.simulator-page .team:hover .team-logo {
+    transform: scale(1.1);
+}
+
+/* --- Indicadores de Status --- */
+.match.completed {
+    border-left: 3px solid var(--color-success);
+}
+
+.match.pending {
+    border-left: 3px solid var(--color-text-secondary);
+}
+
+.match.upcoming {
+    border-left: 3px solid var(--color-primary);
+}
+
+/* ================================================= */
+/*  NOVOS ESTILOS PARA O SIMULADOR - INSPIRAÇÃO   */
+/* ================================================= */
+
+.simulator-page .simulator-header .page-title {
+    font-size: 2.5em;
+    font-family: var(--font-heading);
+}
+
+.simulator-bracket {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding-top: 2rem;
+}
+
+.stage-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.stage-card .stage-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.team-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-grow: 1;
+}
+
+.team-button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.team-button:not(:disabled):hover {
+    border-color: var(--color-primary);
+    background-color: #1e2537;
+}
+
+.team-button .team-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.team-button.selected {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+    font-weight: bold;
+}
+
+.team-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.team-list-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    flex-grow: 1;
+    padding: 2rem 0;
+}
+
+.champion-area {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.champion-display-final {
+    animation: fadeIn 0.5s ease;
+}
+.champion-display-final .trophy {
+    font-size: 4rem;
+    color: var(--color-winner);
+    margin-bottom: 1rem;
+}
+.champion-display-final .name {
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    color: var(--color-primary);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ========================================================= */
+/*  CSS CORRETO E FINAL PARA A TABELA NA PÁGINA bracket.html */
+/* ========================================================= */
+
+#playoffs-container {
+    padding: 2rem 0;
+}
+
+/* Container da tabela com scroll horizontal */
+.tournament-bracket-visual {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* Alinha as colunas à esquerda */
+    gap: 3rem; /* Espaço entre as colunas */
+    padding: 2rem;
+    color: var(--color-text-primary);
+    overflow-x: auto; /* Habilita o scroll */
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+}
+
+/* Cada coluna (Quartas, Semis, Final, Campeão) */
+.tournament-bracket-visual .stage {
+    display: flex;
+    flex-direction: column;
+    min-width: 280px; /* Largura mínima para cada coluna */
+    flex-shrink: 0; /* Impede que as colunas encolham */
+}
+
+.tournament-bracket-visual .stage-title {
+    font-family: var(--font-heading);
+    text-align: center;
+    color: var(--color-text-primary);
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-primary);
+    margin-bottom: 2.5rem; /* Espaço abaixo do título */
+    font-size: 1.5rem;
+}
+
+/* Coluna que agrupa as partidas */
+.tournament-bracket-visual .matches-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Espaça as partidas verticalmente */
+    flex-grow: 1;
+}
+
+/* Cada caixinha de partida */
+.tournament-bracket-visual .match {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden; /* Garante que os cantos arredondados funcionem */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    /* Removendo a transição daqui para evitar bugs visuais na primeira renderização */
+    transition: none; 
+}
+
+/* Cada time dentro da partida */
+.tournament-bracket-visual .team {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    gap: 1rem;
+}
+.tournament-bracket-visual .team:first-of-type {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tournament-bracket-visual .team.tbd {
+    color: var(--color-text-secondary);
+    font-style: italic;
+    justify-content: center;
+}
+
+.tournament-bracket-visual .team-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.tournament-bracket-visual .team-name {
+    flex-grow: 1; /* Ocupa o espaço restante */
+}
+
+.tournament-bracket-visual .team-score {
+    font-weight: bold;
+    font-family: var(--font-heading);
+    font-size: 1.1em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background: var(--color-surface);
+}
+
+/* Destaque para o vencedor */
+.tournament-bracket-visual .team.winner .team-name {
+    color: var(--color-winner);
+    font-weight: bold;
+}
+.tournament-bracket-visual .team.winner .team-score {
+    background-color: var(--color-winner);
+    color: var(--color-background);
+}
+
+/* Data/Hora da partida */
+.tournament-bracket-visual .match-meta {
+    text-align: center;
+    font-size: 0.8em;
+    color: var(--color-text-secondary);
+    background-color: var(--color-surface);
+    padding: 0.4rem 0;
+}
+
+/* Estilo do campeão */
+.tournament-bracket-visual #champion-stage {
+    justify-content: center; /* Centraliza a caixa do campeão */
+}
+.tournament-bracket-visual .champion-display-placeholder, 
+.tournament-bracket-visual .champion-display {
+    text-align: center;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.tournament-bracket-visual .champion-display-placeholder .fa-trophy { font-size: 2.5rem; color: var(--color-text-secondary); }
+
+.tournament-bracket-visual .champion-display {
+    border-color: var(--color-winner);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+.tournament-bracket-visual .champion-display .champion-logo {
+    width: 80px;
+    height: 80px;
+}
+.tournament-bracket-visual .champion-display .champion-name {
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+}
+.tournament-bracket-visual .champion-display .champion-title {
+    color: var(--color-winner);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ======================================== */
+/*  CSS CORRETIVO PARA O POP-UP DO CAMPEÃO  */
+/* ======================================== */
+
+.champion-overlay {
+    /* Posiciona o pop-up sobre toda a tela */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Fundo escuro com desfoque */
+    background-color: rgba(13, 17, 23, 0.7);
+    backdrop-filter: blur(8px);
+    
+    /* Centraliza o conteúdo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Controla a visibilidade e animação */
+    z-index: 2000;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Esconde o pop-up quando tem a classe 'hidden' */
+.champion-overlay.hidden {
+    opacity: 0;
+    pointer-events: none; /* Impede cliques quando escondido */
+}
+
+/* Caixa de conteúdo do pop-up */
+.champion-content {
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-primary);
+    border-radius: 12px;
+    padding: 2.5rem 3.5rem;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 168, 255, 0.2);
+    transform: scale(1);
+    animation: championAppear 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes championAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.champion-content .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 2rem;
+    color: var(--color-text-secondary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+.champion-content .close-btn:hover {
+    color: var(--color-text-primary);
+}
+
+.champion-content .champion-logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem auto;
+    object-fit: contain;
+}
+
+.champion-content .champion-name {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.champion-content .champion-title {
+    font-size: 1.2rem;
+    color: var(--color-winner);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.champion-content .champion-title .fa-trophy {
+    font-size: 1.1em;
+}

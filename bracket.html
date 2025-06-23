@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela dos Playoffs - CS Major Hub</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="site-logo">CS Major <strong>HUB</strong></a>
+            <nav class="main-nav">
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bracket.html" class="active">Tabela</a></li>
+                    <li><a href="simulator.html">Simulador</a></li>
+                    <li><a href="news.html">Notícias</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <div class="container">
+            <h1 class="page-title">Tabela dos Playoffs</h1>
+            <p class="page-subtitle">Acompanhe o mata-mata do Major 2025 em tempo real</p>
+            
+            <section class="playoffs-section">
+                <div id="playoffs-container">
+
+                    <div class="loading-message">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Carregando dados dos playoffs...</p>
+                    </div>
+                </div>
+            </section>
+
+
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container">
+            <p>© 2025 CS Major Hub. Criado como projeto de Engenharia de Software.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/majorData.js"></script>
+    <script src="assets/js/bracket-loader.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
